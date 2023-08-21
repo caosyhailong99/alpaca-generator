@@ -1,0 +1,78 @@
+.title {
+  margin: 0;
+  font-family: "Roboto";
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.sections-wrapper {
+  display: flex;
+  gap: 100px;
+  .image-section {
+    width: 720px;
+    .alpaca-image {
+      width: 720px;
+      height: 720px;
+      display: inline-block;
+      position: relative;
+
+      .background,
+      .leg-part,
+      .ear-part,
+      .neck-part,
+      .mouth-part,
+      .nose-part,
+      .eye-part,
+      .accessories-part,
+      .hair-part {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+
+    .button-row {
+      display: flex;
+      gap: 70px;
+      margin-top: 32px;
+
+      button {
+        width: 100%;
+        height: 65px;
+        background: white;
+        border: none;
+      }
+    }
+  }
+
+  .option-section {
+    .button-flex-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      width: 400px;
+      gap: 10px;
+
+      button {
+        border: 1px solid #8fb1ed;
+        border-radius: 30px;
+        padding: 20px 30px;
+        font-family: "Roboto";
+        font-size: 18px;
+        color: #8fb1ed;
+        background: transparent;
+      }
+    }
+    .option-title {
+      margin: 0;
+      font-family: "Roboto";
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .ccessories-options {
+    }
+
+    .style-options {
+    }
+  }
+}

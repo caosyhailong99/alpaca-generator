@@ -1,17 +1,38 @@
-<p>ALPACA GENERATOR</p>
-<div>
-  <div>
-
+<p class="title">ALPACA GENERATOR</p>
+<div class="sections-wrapper">
+  <div class="image-section">
+    <div class="alpaca-image">
+      <img class="background" src="assets/backgrounds/blue50.png" />
+      <img class="leg-part" src="assets/leg/default.png" />
+      <img class="ear-part" src="assets/ears/default.png" />
+      <img class="neck-part" src="assets/neck/default.png" />
+      <img class="nose-part" src="assets/nose.png" />
+      <img class="mouth-part" src="assets/mouth/default.png" />
+      <img class="accessories-part" src="assets/hair/default.png" />
+      <img class="eye-part" src="assets/eyes/default.png" />
+      <img class="hair-part" src="assets/eyes/default.png" />
+    </div>
+    <div class="button-row">
+      <button>Random</button>
+      <button>Download</button>
+    </div>
   </div>
-  <div>
-      <button></button>
-      <button></button>
-
+  <div class="option-section">
+    <div class="accessories-options">
+      <p class="option-title">ACCESSORIZE THE ALPACA'S</p>
+      <div class="button-flex-wrap">
+        <button *ngFor="let accessorie of accessoriesOption">
+          {{ accessorie }}
+        </button>
+      </div>
+    </div>
+    <div class="style-options">
+      <p class="option-title">STYLE</p>
+      <div class="button-flex-wrap">
+        <button *ngFor="let style of stylesOption">
+          {{ style }}
+        </button>
+      </div>
+    </div>
   </div>
-  <div>
-
-  </div>
-</div>
-<div>
-
 </div>
