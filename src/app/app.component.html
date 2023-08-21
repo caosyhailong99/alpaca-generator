@@ -2,15 +2,39 @@
 <div class="sections-wrapper">
   <div class="image-section">
     <div class="alpaca-image">
-      <img class="background" src="assets/backgrounds/blue50.png" />
-      <img class="leg-part" src="assets/leg/default.png" />
-      <img class="ear-part" src="assets/ears/default.png" />
-      <img class="neck-part" src="assets/neck/default.png" />
+      <img
+        class="background"
+        src="assets/backgrounds/{{ chosenBackground }}.png"
+      />
+      <img
+        class="leg-part"
+        src="assets/leg/{{ chosenLeg.toLowerCase() }}.png"
+      />
+      <img
+        class="ear-part"
+        src="assets/ears/{{ chosenEars.toLowerCase() }}.png"
+      />
+      <img
+        class="neck-part"
+        src="assets/neck/{{ chosenNeck.toLowerCase() }}.png"
+      />
       <img class="nose-part" src="assets/nose.png" />
-      <img class="mouth-part" src="assets/mouth/default.png" />
-      <img class="accessories-part" src="assets/hair/default.png" />
-      <img class="eye-part" src="assets/eyes/default.png" />
-      <img class="hair-part" src="assets/eyes/default.png" />
+      <img
+        class="mouth-part"
+        src="assets/mouth/{{ chosenMouth.toLowerCase() }}.png"
+      />
+      <img
+        class="hair-part"
+        src="assets/hair/{{ chosenHair.toLowerCase() }}.png"
+      />
+      <img
+        class="eye-part"
+        src="assets/eyes/{{ chosenEyes.toLowerCase() }}.png"
+      />
+      <img
+        class="accessories-part"
+        src="assets/accessories/{{ chosenAccessory.toLowerCase() }}.png"
+      />
     </div>
     <div class="button-row">
       <button>Random</button>
@@ -21,17 +45,81 @@
     <div class="accessories-options">
       <p class="option-title">ACCESSORIZE THE ALPACA'S</p>
       <div class="button-flex-wrap">
-        <button *ngFor="let accessorie of accessoriesOption">
+        <button
+          *ngFor="let accessorie of accessoriesOption"
+          (click)="onClickPart(accessorie)"
+        >
           {{ accessorie }}
         </button>
       </div>
     </div>
     <div class="style-options">
       <p class="option-title">STYLE</p>
-      <div class="button-flex-wrap">
-        <button *ngFor="let style of stylesOption">
-          {{ style }}
-        </button>
+      <div [ngSwitch]="currentPart" class="button-flex-wrap">
+        <ng-container *ngSwitchCase="accessoriesOption[0]">
+          <button
+            *ngFor="let style of hairStyleOption"
+            (click)="onClickHairStyle(style)"
+          >
+            {{ style }}
+          </button>
+        </ng-container>
+        <ng-container *ngSwitchCase="accessoriesOption[1]">
+          <button
+            *ngFor="let style of earsStyleOption"
+            (click)="onClickEarsStyle(style.value)"
+          >
+            {{ style.name }}
+          </button>
+        </ng-container>
+        <ng-container *ngSwitchCase="accessoriesOption[2]">
+          <button
+            *ngFor="let style of eyesStyleOption"
+            (click)="onClickEyesStyle(style)"
+          >
+            {{ style }}
+          </button>
+        </ng-container>
+        <ng-container *ngSwitchCase="accessoriesOption[3]">
+          <button
+            *ngFor="let style of mouthStyleOption"
+            (click)="onClickMouthStyle(style)"
+          >
+            {{ style }}
+          </button>
+        </ng-container>
+        <ng-container *ngSwitchCase="accessoriesOption[4]">
+          <button
+            *ngFor="let style of neckStyleOption"
+            (click)="onClickNeckStyle(style.value)"
+          >
+            {{ style.name }}
+          </button>
+        </ng-container>
+        <ng-container *ngSwitchCase="accessoriesOption[5]">
+          <button
+            *ngFor="let style of legStyleOption"
+            (click)="onClickLegStyle(style.value)"
+          >
+            {{ style.name }}
+          </button>
+        </ng-container>
+        <ng-container *ngSwitchCase="accessoriesOption[6]">
+          <button
+            *ngFor="let style of accessoriesStyleOption"
+            (click)="onClickAccessoriesStyle(style)"
+          >
+            {{ style }}
+          </button>
+        </ng-container>
+        <ng-container *ngSwitchCase="accessoriesOption[7]">
+          <button
+            *ngFor="let style of backgroundStyleOption"
+            (click)="onClickBackgroundStyle(style)"
+          >
+            {{ style }}
+          </button>
+        </ng-container>
       </div>
     </div>
   </div>
